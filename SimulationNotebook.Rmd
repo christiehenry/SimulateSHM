@@ -1,11 +1,11 @@
 ---
 title: "Simulate SHM Data"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
   word_document: default
+  pdf_document: default
 ---
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -290,9 +290,9 @@ model.df.time.subsets=data.frame(
   sigma4= rgamma(n=numObservations/4,shape=6.1, rate=20.2))
 
 
- ggplot(model.df.time.subsets)+geom_density(aes(model.df.time.subsets$sigma1),colour="red")+geom_density(aes(model.df.time.subsets$sigma2),colour="purple")+geom_density(aes(model.df.time.subsets$sigma3),colour="blue")+geom_density(aes(model.df.time.subsets$sigma4),colour="green")+theme_bw()+xlab("Standard Deviation")
+ ggplot(model.df.time.subsets)+geom_density(aes(sigma1),colour="red")+geom_density(aes(sigma2),colour="purple")+geom_density(aes(sigma3),colour="blue")+geom_density(aes(sigma4),colour="green")+theme_bw()+xlab("Standard Deviation")
  
- ggplot(model.df.time.subsets)+geom_density(aes(model.df.time.subsets$sigma1),colour="red")+geom_density(aes(model.df.time.subsets$sigma2),colour="purple")+geom_density(aes(model.df.time.subsets$sigma3),colour="blue")+geom_density(aes(model.df.time.subsets$sigma4),colour="green")+theme_bw()+xlab("Standard Deviation")+geom_density(aes(stdev),data=data.frame(stdev=stdev))
+ ggplot(model.df.time.subsets)+geom_density(aes(sigma1),colour="red")+geom_density(aes(sigma2),colour="purple")+geom_density(aes(sigma3),colour="blue")+geom_density(aes(sigma4),colour="green")+theme_bw()+xlab("Standard Deviation")+geom_density(aes(stdev),data=data.frame(stdev=stdev))
 
 
 params_df = data.frame(
